@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <title>Code Invaders</title>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Code Invaders</h1>
+    </div>
+    <div id="statRow" class="row">
+      <div class="col-md-12">
+        <p>Score: ## Lives: ##</p>
+      </div>
+    </div>
+    <div id="invaderRow" class="row">
+      <div class="col-md-6">
+        <p class="invaderWord invaderWordL">charAt</p>
+      </div>
+      <div class="col-md-6">
+        <p class="invaderWord invaderWordR">charAt</p>
+      </div>
+    </div>
+    <div id="laserRow" class="row">
+      <div class="col-md-6">
+        <p class="laserShot laserShotL">|</p>
+      </div>
+      <div class="col-md-6">
+        <p class="laserShot laserShotR">|</p>
+      </div>
+    </div>
+    <div id="playerRow" class="row">
+      <div class="col-md-6">
+        <p class="playerShip playerShipL">char...</p>
+      </div>
+      <div class="col-md-6">
+        <p class="playerShip playerShipR">char...</p>
+      </div>
+    </div>
+    <div id="inputRow" class="row">
+      <div class="col-md-4">
 
-  </body>
+      </div>
+      <div class="col-md-4">
+        <label for=""></label>
+        <input id="userInput" class="form-control form-control-lg" type="text">
+      </div>
+      <div class="col-md-4">
+
+      </div>
+    </div>
+  </div>
+</body>
 </html>

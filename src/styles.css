@@ -1,0 +1,37 @@
+* {
+  text-align: center;
+}
+
+body {
+  background-color: black;
+  color: green;
+  font-family: monospace;
+}
+
+.jumbotron {
+  background-color: grey;
+}
+
+.laserShot {
+  color: red;
+}
+
+#userInput {
+  background-color: grey;
+}
+
+
+
+.invaderWordR{
+  display: none;
+}
+.playerShipL{
+  display: none;
+}
+
+.laserShotL {
+  display: none;
+}
+.laserShotR {
+  display: none;
+}
