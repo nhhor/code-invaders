@@ -1,4 +1,4 @@
-import { XXXXX } from './backend.js';
+import { Player } from './backend.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,4 +31,8 @@ $(document).ready(function(){
   });
 
 
+// NEW
+  let player = new Player ();
+  let word = player.generateWord();
+  $('#word-test').text(word);
 });

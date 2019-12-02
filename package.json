@@ -1,7 +1,7 @@
 {
-  "name": "solar-age-calculator",
+  "name": "code-invaders",
   "version": "1.0.0",
-  "description": "Epicodus / Code Review / Test Driven Development",
+  "description": "Team Week - Speed Typing Game",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
@@ -11,7 +11,7 @@
     "debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "keywords": [],
-  "author": "Noah Horwitz",
+  "author": "Noah Horwitz, Chris Sanchez, Courtney Schild, Celeste Morton",
   "license": "gpl-3.0",
   "devDependencies": {
     "@babel/core": "^7.6.4",
