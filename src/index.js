@@ -5,17 +5,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function(){
+  let player = new Player ();
+  let word = player.generateWord();
   let playerLetters = [];
+  $('.invaderWord').text(word);
+
   $("#userInput").keyup(function() {
     playerLetters.push($("#userInput").val());
     let playerWord = playerLetters.join('');
 
     console.log(playerWord);
-    $(".playerShip").text("<"+playerWord+">");
-    $("#userInput").val("")
+    $(".playerShip").text(playerWord);
+    $("#userInput").val("");
 
 
-    if (playerWord === "charAt") {
+    if (playerWord === word) {
       $(".invaderWordR").fadeToggle(1500);
       $(".playerShipL").fadeToggle(1500);
       $(".laserShotL").fadeToggle(200);
@@ -29,10 +33,4 @@ $(document).ready(function(){
     }
 
   });
-
-
-// NEW
-  let player = new Player ();
-  let word = player.generateWord();
-  $('#word-test').text(word);
 });
