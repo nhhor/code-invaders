@@ -43,4 +43,16 @@ export class Player {
       let randomizedNumber = Math.floor(Math.random() * level1.length);
       // console.log(level1[randomizedNumber]);
   }
+  charCheck(code, playerCode){
+    for (let i = 0; i < playerCode.length; i++){
+      if (code.charAt(i) != playerCode.charAt(i)) {
+        console.log('playerCode: ', playerCode);
+        this.health -= 1;
+        console.log('Health: ', this.health);
+        // console.log('Game Over!');
+      }
+      // console.log(i);
+      // return i;
+    }
+  }  
 }
