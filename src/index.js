@@ -15,13 +15,6 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerCode").text(playerCode);
 
-    // for (let i = 0; i < playerCode.length; i++) { //INTENSE
-    //   console.log(playerCode.length);
-    //   if (code.charAt(i) != playerCode.charAt(i)) {
-    //     console.log('Game Over!');
-    //   }
-    // }
-
     console.log(playerCode);
     if(playerCode === code){
     let i = 0;
@@ -34,12 +27,6 @@ $(document).ready(function () {
       $(".laserShotR").toggleClass("laserShotAnimation");
       $(".playerShip").toggleClass("playerShipAnimationRight");
       $(".playerShip").toggleClass("playerShipAnimationLeft");
-      // $(".playerShip").removeClass("playerShipAnimationRight");
-      // $(".playerShip").removeClass("playerShipAnimationLeft");
-
-      // setTimeout(function() {
-        //     $('.playerShip').removeClass('playerShipAnimationRight playerShipAnimationLeft');
-        //   }, 1000);
 
       playerLetters = [];
       player.score += 1;

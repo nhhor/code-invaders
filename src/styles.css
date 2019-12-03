@@ -6,8 +6,22 @@ body {
   background-image: url("https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  color: green;
+  color: #8ACB88;
   font-family: monospace;
+  font-size: calc(24px + 0.5vw);
+}
+
+h1 {
+  color: #E8871E;
+  font-family: 'VT323', monospace;
+  font-size: 96px;
+  letter-spacing: 2rem;
+  text-transform: uppercase;
+  padding-bottom: 60px;
+}
+
+.container {
+  margin-top: 60px;
 }
 
 .gradient {
@@ -15,22 +29,8 @@ body {
   background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 20%,rgba(0,0,0,0.6) 80%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.jumbotron {
-  background-color: white;
-  border-radius: 0;
-}
-
 #userInput {
   background-color: grey;
-}
-
-.invaderCode {
-  background-image: url("https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif");
-  background-repeat: no-repeat;
-  background-size: 20%;
-  height: 200px;
-  background-position: center;
-  font-size: 25px;
 }
 
 .playerShip {
@@ -42,7 +42,6 @@ body {
 }
 
 .playerCode {
-  font-size: 25px;
   padding: 1rem;
 }
 
@@ -115,30 +114,22 @@ body {
   100%  {color:rgba(0, 0, 0, 0);}
 }
 
-
-
 .invaderCodeR{
   display: none;
 }
 
 .laserShotL {
-  /* display: none; */
   color: rgba(0, 0, 0, 0);
 }
 
 .laserShotR {
-  /* display: none; */
   color: rgba(0, 0, 0, 0);
-}
-
-.laserShot {
-  color: rgba(255, 0, 0, 1);
 }
 
 .laserShotL {
-  font-size: 50px;
+  font-size: 52px;
 }
 
 .laserShotR {
-  font-size: 50px;
+  font-size: 52px;
 }
