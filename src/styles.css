@@ -24,6 +24,10 @@ body {
   background-color: grey;
 }
 
+#userInput:focus {
+  border: 2px solid purple;
+}
+
 .invaderCode {
   background-image: url("https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif");
   background-repeat: no-repeat;
@@ -141,4 +145,12 @@ body {
 
 .laserShotR {
   font-size: 50px;
+}
+
+#gameOver {
+  display: none;
+}
+
+#reset-game {
+  color: white;
 }
