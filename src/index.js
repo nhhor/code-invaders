@@ -60,6 +60,7 @@ $(document).ready(function () {
         $(".invaderCodeL").fadeToggle(200);
       }, 1000);
 
+
       $(".laserShotL").toggleClass("laserShotAnimation");
       $(".laserShotR").toggleClass("laserShotAnimation");
       $(".playerShip").toggleClass("playerShipAnimationRight");
