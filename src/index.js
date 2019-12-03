@@ -15,15 +15,16 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerShip").text(`${playerCode}`);
 
-    for (let i = 0; i < playerCode.length; i++) {
-      // console.log(playerCode.length);
-      if (code.charAt(i) != playerCode.charAt(i)) {
-        console.log('Game Over!');
-      }
-    }
+    // for (let i = 0; i < playerCode.length; i++) { //INTENSE
+    //   console.log(playerCode.length);
+    //   if (code.charAt(i) != playerCode.charAt(i)) {
+    //     console.log('Game Over!');
+    //   }
+    // }
 
     // console.log(playerCode);
     if (playerCode === code) {
+      let i = 0;
       $(".invaderCodeR").fadeToggle(1500);
       // $(".playerShipL").fadeToggle(1500);
       $(".laserShotL").fadeToggle(200);
@@ -44,8 +45,12 @@ $(document).ready(function () {
       playerLetters = [];
       player.score += 1;
       player.checkScore(player.score);
-      // console.log(player.randomCode());
+      console.log(player.randomCode());
+      player.difficulties.shift();
+      code = player.generateCode();
+      $('.invaderCode').text(code);
+      console.log('Score: ', player.score);
+      return true;
     }
-    console.log('Score: ', player.score);
   });
 });
