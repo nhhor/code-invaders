@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color: black;
   background-image: url("https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,12 +10,14 @@ body {
   font-family: monospace;
 }
 
-.jumbotron {
-  background-color: grey;
+.gradient {
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 20%,rgba(0,0,0,0.6) 80%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
-.laserShot {
-  color: red;
+.jumbotron {
+  background-color: white;
+  border-radius: 0;
 }
 
 #userInput {
@@ -33,54 +34,111 @@ body {
 }
 
 .playerShip {
-  background-repeat: no-repeat;
-  background-size: 20%;
-  height: 200px;
-  background-position: center;
-  font-size: 25px;
   position: relative;
+}
 
+#displayCode {
+  height: 2rem;
+}
+
+.playerCode {
+  font-size: 25px;
+  padding: 1rem;
 }
 
 .playerShipAnimationRight {
-  -webkit-animation-name: rightMove;
-  -webkit-animation-duration: 4s;
+  -webkit-animation-name: rightMove; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
   animation-name: rightMove;
+  animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes rightMove {
+  0%   {left:0px; top:0px;}
+  25%  {left:25.5%; top:0px;}
+  75%  {left:25.5%; top:0px;}
+  100%  {left:0px; top:0px;}
 }
 
 @keyframes rightMove {
   0%   {left:0px; top:0px;}
-  25%  {left:26%; top:0px;}
+  25%  {left:25.5%; top:0px;}
+  75%  {left:25.5%; top:0px;}
   100%  {left:0px; top:0px;}
 }
 
 .playerShipAnimationLeft {
-  -webkit-animation-name: leftMove;
-  -webkit-animation-duration: 4s;
+  -webkit-animation-name: leftMove; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
   animation-name: leftMove;
-  animation-duration: 4s;
+  animation-duration: 2s;
 }
 
 @keyframes leftMove {
   0%   {left:0px; top:0px;}
-  25%  {left:-26%; top:0px;}
+  25%  {left:-25.5%; top:0px;}
+  75%  {left:-25.5%; top:0px;}
   100%  {left:0px; top:0px;}
 }
 
-/* .row {
-  height: 300px;
-} */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes leftMove {
+  0%   {left:0px; top:0px;}
+  25%  {left:-25.5%; top:0px;}
+  75%  {left:-25.5%; top:0px;}
+  100%  {left:0px; top:0px;}
+}
+
+.laserShotAnimation {
+  -webkit-animation-name: colorChange; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: colorChange;
+  animation-duration: 2s;
+}
+
+@keyframes colorChange {
+  0%   {color:rgba(0, 0, 0, 0);}
+  40%   {color:rgba(0, 0, 0, 0);}
+  50%  {color:red;}
+  60%   {color:rgba(0, 0, 0, 0);}
+  100%  {color:rgba(0, 0, 0, 0);}
+
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes colorChange {
+  0%   {color:rgba(0, 0, 0, 0);}
+  40%   {color:rgba(0, 0, 0, 0);}
+  50%  {color:red;}
+  60%   {color:rgba(0, 0, 0, 0);}
+  100%  {color:rgba(0, 0, 0, 0);}
+}
+
+
 
 .invaderCodeR{
   display: none;
 }
-/* .playerShipL{
-  display: none;
-} */
 
 .laserShotL {
-  display: none;
+  /* display: none; */
+  color: rgba(0, 0, 0, 0);
 }
+
 .laserShotR {
-  display: none;
+  /* display: none; */
+  color: rgba(0, 0, 0, 0);
+}
+
+.laserShot {
+  color: rgba(255, 0, 0, 1);
+}
+
+.laserShotL {
+  font-size: 50px;
+}
+
+.laserShotR {
+  font-size: 50px;
 }

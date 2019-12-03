@@ -5,39 +5,40 @@
   <title>Code Invaders</title>
 </head>
 <body>
-  <div class="jumbotron">
-    <h1>Code Invaders</h1>
-  </div>
-  <div class="container">
-    <div id="statRow" class="row">
-      <div class="col-md-12">
-        <p>Score: ## Lives: ##</p>
-      </div>
+  <div class="gradient">
+    <div class="jumbotron">
+      <h1>Code Invaders</h1>
     </div>
-    <div id="invaderRow" class="row">
-      <div class="col-md-6">
-        <p class="invaderCode invaderCodeL">charAt</p>
-        <!-- <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif"/> -->
+    <div class="container">
+      <div id="statRow" class="row">
+        <div class="col-md-12">
+          <p>Score: ## Lives: ##</p>
+        </div>
       </div>
-      <div class="col-md-6">
-        <p class="invaderCode invaderCodeR">charAt</p>
-        <!-- <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif"/> -->
+      <div id="invaderRow" class="row">
+        <div class="col-md-6">
+          <p class="invaderCode invaderCodeL">charAt</p>
+          <!-- <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif"/> -->
+        </div>
+        <div class="col-md-6">
+          <p class="invaderCode invaderCodeR">charAt</p>
+          <!-- <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif"/> -->
+        </div>
       </div>
-    </div>
-    <div id="laserRow" class="row">
-      <div class="col-md-6">
-        <p class="laserShot laserShotL">|</p>
+      <div id="laserRow" class="row">
+        <div class="col-md-6">
+          <p class="laserShotL">|</p>
+        </div>
+        <div class="col-md-6">
+          <p class="laserShotR laserShotAnimation">|</p>
+        </div>
       </div>
-      <div class="col-md-6">
-        <p class="laserShot laserShotR">|</p>
-      </div>
-    </div>
-    <div id="playerRow" class="row">
-      <div class="col-md-12">
-        <img class="playerShip playerShipAnimationRight" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/spaceship.png" width="10%"/>
-        <p class="playerShipL">char...</p>
-      </div>
-      <!-- <div class="col-md-6">
+      <div id="playerRow" class="row">
+        <div class="col-md-12">
+          <img class="playerShip playerShipAnimationRight" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/spaceship.png" width="160px"/>
+          <p id="displayCode"><span class="playerCode"></span></p>
+        </div>
+        <!-- <div class="col-md-6">
         <p class="playerShip playerShipR">char...</p>
       </div> -->
     </div>
@@ -50,9 +51,9 @@
         <input id="userInput" class="form-control form-control-lg" type="text">
       </div>
       <div class="col-md-4">
-
       </div>
     </div>
   </div>
+</div>
 </body>
 </html>
