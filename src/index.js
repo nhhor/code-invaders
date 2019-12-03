@@ -5,8 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 $(document).ready(function(){
+  let player = new Player ();
+  let code = player.generateCode();
+  $('.invaderCode').text(code);
   let playerLetters = [];
-
   $("#userInput").keyup(function() {
     playerLetters.push($("#userInput").val());
     $("#userInput").val("");
@@ -22,14 +24,26 @@ $(document).ready(function(){
 
   console.log(playerCode);
   if(playerCode === code){
-    // console.log('Score 1: ', player.score);
-    player.score += 1;
+     $(".invaderCodeR").fadeToggle(1500);
+      // $(".playerShipL").fadeToggle(1500);
+      $(".laserShotL").fadeToggle(200);
+      $(".laserShotR").fadeToggle(200);
+      $(".invaderCodeL").fadeToggle(1500);
+      // $(".playerShipR").fadeToggle(1500);
+      $(".laserShotL").fadeToggle(2000);
+      $(".laserShotR").fadeToggle(2000);
+      $(".playerShip").toggleClass("playerShipAnimationRight");
+      $(".playerShip").toggleClass("playerShipAnimationLeft");
+      // $(".playerShip").removeClass("playerShipAnimationRight");
+      // $(".playerShip").removeClass("playerShipAnimationLeft");
+      // setTimeout($(".playerShip").removeClass("playerShipAnimationLeft"), 4.0*1000)
+      // setTimeout(function() {
+      //   $('.playerShip').removeClass('playerShipAnimationRight playerShipAnimationLeft');
+      // }, 1000);
+
+      playerLetters = [];
+      player.score += 1;
   }
   console.log('Score 2: ', player.score);
   });
 });
-
-// NEW
-let player = new Player ();
-let code = player.generateCode();
-$('.invaderCode').text(code);
