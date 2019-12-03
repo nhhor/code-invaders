@@ -6,33 +6,30 @@ import './styles.css';
 
 $(document).ready(function(){
   let playerLetters = [];
+
   $("#userInput").keyup(function() {
     playerLetters.push($("#userInput").val());
-    let playerWord = playerLetters.join('');
+    $("#userInput").val("");
+    let playerCode = playerLetters.join('');
+    $(".playerShip").text(`${playerCode}`);
 
-    console.log(playerWord);
-    $(".playerShip").text("<"+playerWord+">");
-    $("#userInput").val("")
-
-
-    if (playerWord === "charAt") {
-      $(".invaderWordR").fadeToggle(1500);
-      $(".playerShipL").fadeToggle(1500);
-      $(".laserShotL").fadeToggle(200);
-      $(".laserShotR").fadeToggle(200);
-      $(".invaderWordL").fadeToggle(1500);
-      $(".playerShipR").fadeToggle(1500);
-      $(".laserShotL").fadeToggle(2000);
-      $(".laserShotR").fadeToggle(2000);
-
-      playerLetters = [];
+    for(let i = 0; i < playerCode.length; i++){
+      // console.log(playerCode.length);
+      if (code.charAt(i) != playerCode.charAt(i)) {
+        console.log('Game Over!');
+      }
     }
 
+  console.log(playerCode);
+  if(playerCode === code){
+    // console.log('Score 1: ', player.score);
+    player.score += 1;
+  }
+  console.log('Score 2: ', player.score);
   });
-
+});
 
 // NEW
-  let player = new Player ();
-  let word = player.generateWord();
-  $('#word-test').text(word);
-});
+let player = new Player ();
+let code = player.generateCode();
+$('.invaderCode').text(code);
