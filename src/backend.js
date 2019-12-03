@@ -1,17 +1,30 @@
-import $ from 'jquery';
-
 export class Player {
   constructor () {
     this.score = 0;
-    // this.difficulty;
-    this.errors = 3;
+    this.level = 1;
+    this.errors = 0;
   }
-  generateWord () {
-    let html = ["<p>Kuiper Belt</p>", "<h1>Orion Nebula</h1>", "<a href='https://nasa.gov/'>NASA</a>", "<hr>", "<img src='martian-picture.jpg' alt='image of a green martian'>", "<div id='lunar-rocks' class='wrapper'></div>", "<link rel='stylesheet' href='css/styles.css'>", "<button id='launch-ship'>Launch Ship</button>", "<title>Planetary Landings</title>", "<!DOCTYPE html>"];
-    // let css = ["#lunar-rocks {margin: auto;}", "h1 {color: green;}", "#ffffff", "display: none;", "font-size: 24px;", "padding: 16px 32px 8px 32px;", "background-color: rgba(255, 255, 255, 0.5);", "text-align: center;", "height: 100%;", "img {float: right;}"];
-    // let javascript = ["$('#lunar-rocks').val();", "Math.random();", "let planets = 8;", "for (let i = 0; i < this.planets.length; i++)", "return false;",  "launchShip ();", "refuelShip();", "event.preventDefault();", "if (response.data[i].planets[0].visit_planet.spacestation === undefined)", "import 'bootstrap';" ];
-    for(let i = 0; i < html.length; i++){
-      return html[i];
+  generateCode() {
+    let level1 = ["<p>", "<img>", "<h1>", "text-align", "const", "<!DOCTYPE html>"];
+    let level2 = ["css/styles.css", "<script></script>", "event.preventDefault();", "#00ff00", "<title>Planetary Landings</title>"];
+    let level3 = ["Math.random()", "padding: 16px 32px 8px 32px;", "let planets = 8;", "git commit -m", "<button id='launch-ship'>Launch Ship</button>"];
+    let level4 = ["<a href='https://nasa.gov/'>NASA</a>", "background-color: rgba(255, 255, 255, 0.5);", "<link rel='stylesheet' href='css/styles.css'>", "import { Player } './src/backend.js'"];
+    let level5 = ["if (response.data[i].planets[0].visit_planet.spacestation === undefined)", "for (let i = 0; i < this.planets.length; i++)", "$('form#intergalactic-planetary-planetary-intergalactic').submit(function(event) {", "const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];"];
+
+    for(let i = 0; i < level1.length; i++){
+      return level1[i];
+    }
+    for(let i = 0; i < level2.length; i++){
+      return level2[i];
+    }
+    for(let i = 0; i < level3.length; i++){
+      return level3[i];
+    }
+    for(let i = 0; i < level4.length; i++){
+      return level4[i];
+    }
+    for(let i = 0; i < level5.length; i++){
+      return level5[i];
     }
   }
 }

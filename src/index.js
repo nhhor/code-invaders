@@ -6,27 +6,29 @@ import './styles.css';
 
 $(document).ready(function(){
   let player = new Player ();
-  let word = player.generateWord();
+  let code = player.generateCode();
+  $('.invaderCode').text(code);
   let playerLetters = [];
-  $('.invaderWord').text(word);
-
   $("#userInput").keyup(function() {
     playerLetters.push($("#userInput").val());
-    let playerWord = playerLetters.join('');
-
-    console.log(playerLetters);
-    $(".playerShip").text(playerWord);
     $("#userInput").val("");
+    let playerCode = playerLetters.join('');
+    $(".playerShip").text(`${playerCode}`);
 
+    for(let i = 0; i < playerCode.length; i++){
+      // console.log(playerCode.length);
+      if (code.charAt(i) != playerCode.charAt(i)) {
+        console.log('Game Over!');
+      }
+    }
 
-    // $(".playerShip").
-
-    if (playerWord === word) {
-      $(".invaderWordR").fadeToggle(1500);
+  console.log(playerCode);
+  if(playerCode === code){
+     $(".invaderCodeR").fadeToggle(1500);
       // $(".playerShipL").fadeToggle(1500);
       $(".laserShotL").fadeToggle(200);
       $(".laserShotR").fadeToggle(200);
-      $(".invaderWordL").fadeToggle(1500);
+      $(".invaderCodeL").fadeToggle(1500);
       // $(".playerShipR").fadeToggle(1500);
       $(".laserShotL").fadeToggle(2000);
       $(".laserShotR").fadeToggle(2000);
@@ -40,8 +42,8 @@ $(document).ready(function(){
       // }, 1000);
 
       playerLetters = [];
-    }
-
-
+      player.score += 1;
+  }
+  console.log('Score 2: ', player.score);
   });
 });
