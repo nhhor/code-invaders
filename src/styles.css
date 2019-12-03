@@ -23,7 +23,7 @@ body {
   background-color: grey;
 }
 
-.invaderWord {
+.invaderCode {
   background-image: url("https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif");
   background-repeat: no-repeat;
   background-size: 20%;
@@ -71,7 +71,7 @@ body {
   height: 300px;
 } */
 
-.invaderWordR{
+.invaderCodeR{
   display: none;
 }
 /* .playerShipL{
