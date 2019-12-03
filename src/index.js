@@ -16,6 +16,7 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerCode").text(playerCode);
 
+
     function charCheck(joinedArr){      for (let i = 0; i < joinedArr.length; i++){
       if (code.charAt(i) != joinedArr.charAt(i)) {
         player.difficulties.shift();
@@ -45,7 +46,6 @@ $(document).ready(function () {
 
   console.log(playerCode);
   if(playerCode === code){
-    let i = 0;
     setTimeout(function() {
       $(".invaderCodeR").fadeToggle(200);
       $(".invaderCodeL").fadeToggle(200);
