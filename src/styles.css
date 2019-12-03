@@ -4,6 +4,9 @@
 
 body {
   background-color: black;
+  background-image: url("https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: green;
   font-family: monospace;
 }
@@ -20,14 +23,60 @@ body {
   background-color: grey;
 }
 
+.invaderWord {
+  background-image: url("https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  height: 200px;
+  background-position: center;
+  font-size: 25px;
+}
 
+.playerShip {
+  background-repeat: no-repeat;
+  background-size: 20%;
+  height: 200px;
+  background-position: center;
+  font-size: 25px;
+  position: relative;
+
+}
+
+.playerShipAnimationRight {
+  -webkit-animation-name: rightMove;
+  -webkit-animation-duration: 4s;
+  animation-name: rightMove;
+}
+
+@keyframes rightMove {
+  0%   {left:0px; top:0px;}
+  25%  {left:26%; top:0px;}
+  100%  {left:0px; top:0px;}
+}
+
+.playerShipAnimationLeft {
+  -webkit-animation-name: leftMove;
+  -webkit-animation-duration: 4s;
+  animation-name: leftMove;
+  animation-duration: 4s;
+}
+
+@keyframes leftMove {
+  0%   {left:0px; top:0px;}
+  25%  {left:-26%; top:0px;}
+  100%  {left:0px; top:0px;}
+}
+
+/* .row {
+  height: 300px;
+} */
 
 .invaderWordR{
   display: none;
 }
-.playerShipL{
+/* .playerShipL{
   display: none;
-}
+} */
 
 .laserShotL {
   display: none;
