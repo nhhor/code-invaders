@@ -33,6 +33,10 @@ h1 {
   background-color: grey;
 }
 
+#userInput:focus {
+  border: 2px solid purple;
+}
+
 .playerShip {
   position: relative;
 }
@@ -132,4 +136,12 @@ h1 {
 
 .laserShotR {
   font-size: 52px;
+}
+
+#gameOver {
+  display: none;
+}
+
+#reset-game {
+  color: white;
 }
