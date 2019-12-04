@@ -38,7 +38,6 @@ $(document).ready(function () {
 
       playerLetters = [];
       player.score += 1;
-      player.checkScore(player.score);
       player.difficulties.shift();
       code = player.generateCode();
 
@@ -64,8 +63,32 @@ $(document).ready(function () {
     }
 
     function charCheck(joinedArr){
+      console.log(player.difficulties);
       for (let i = 0; i < joinedArr.length; i++){
-        if (code.charAt(i) != joinedArr.charAt(i)) {
+        if(code.charAt(i) != joinedArr.charAt(i) && player.health > 1){
+          $(".laserShotAnimation").css("animation-delay","-2s");
+          playerLetters = [];
+          player.health -= 1;
+          // player.difficulties.shift();
+          code = player.generateCode();
+
+          setTimeout(function(){
+            $('.invaderCode').text(code);
+          }, 1000);
+
+          setTimeout(function() {
+            $(".invaderCodeR").fadeToggle(250);
+            $(".invaderCodeL").fadeToggle(250);
+          }, 850);
+
+          $(".laserShotL").toggleClass("laserShotAnimation");
+          $(".laserShotR").toggleClass("laserShotAnimation");
+
+          $(".playerShip").toggleClass("playerShipAnimationRight");
+          $(".playerShip").toggleClass("playerShipAnimationLeft");
+
+          $(".playerCode").text("");
+        } else if (code.charAt(i) != joinedArr.charAt(i)) {
           $(".laserShotAnimation").css("animation-delay","-2s");
           playerLetters = [];
           player.health -= 1;
@@ -86,20 +109,11 @@ $(document).ready(function () {
 
           $(".playerShip").toggleClass("playerShipAnimationRight");
           $(".playerShip").toggleClass("playerShipAnimationLeft");
-
-
-          // setTimeout(function(){
-          //   $(".laserShotAnimation").css("animation-delay","0s");
-          // }, 500);
-
           $(".playerCode").text("");
-
-          return code;
         }
       }
     }
     charCheck(playerCode);
-
 
     function checkLevel() {
       if (player.score === 5) {
@@ -113,12 +127,21 @@ $(document).ready(function () {
       } else if (player.score === 20) {
         $(".level").text("Kill....me! Ripelyyy");
         console.log('Difficulty 5');
+      } else if (player.score === 25){
+        $('.gradient').hide();
+        $('#winner').fadeIn();
+        console.log('You Win!');
+      } else {
+        console.log('Game ongoing');
       }
     }
     checkLevel();
 
     function gameOver(){
-      if(player.health === 2){
+      if (player.difficulties.length === 0 && player.health < 1){
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      } else if(player.health === 2){
         $('#three-hearts').hide();
       } else if (player.health === 1){
         $('#two-hearts').hide();
@@ -127,10 +150,9 @@ $(document).ready(function () {
         $('.gradient').hide();
         $('#gameOver').fadeIn();
       }
-      console.log(player.health);
+      // console.log(player.health);
     }
     gameOver();
-
   });
 
   // DELAY ON STARTING ANIMATIONS
