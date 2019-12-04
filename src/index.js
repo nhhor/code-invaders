@@ -55,6 +55,22 @@ $(document).ready(function () {
     }
     charCheck(playerCode);
 
+    function checkLevel() {
+      if (player.score === 5) {
+        $(".level").text("May the schwartz be with you");
+      } else if (player.score === 10) {
+        console.log('Difficulty 3');
+        $(".level").text("You still don't understand what you're dealing with...");
+      } else if (player.score === 15) {
+        $(".level").text("No weapons! No tricks! Just you and me!");
+        console.log('Difficulty 4');
+      } else if (player.score === 20) {
+        $(".level").text("Kill....me! Ripelyyy");
+        console.log('Difficulty 5');
+      }
+    }
+    checkLevel();
+
     function gameOver(){
       if(player.health === 2){
         $('#three-hearts').hide();
@@ -87,10 +103,10 @@ $(document).ready(function () {
 
       playerLetters = [];
       player.score += 1;
-      player.checkScore(player.score);
       player.difficulties.shift();
       code = player.generateCode();
       $('.invaderCode').text(code);
+      $('.score').text(player.score);
       console.log('Score: ', player.score);
       return true;
     }
