@@ -9,7 +9,8 @@ $(document).ready(function () {
   let code = player.generateCode();
   $('.invaderCode').text(code);
   let playerLetters = [];
-
+  $("#userInput").focus();
+  $("#userInput").select();
 
   $("#userInput").keyup(function () {
     playerLetters.push($("#userInput").val());
@@ -17,6 +18,11 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerCode").text(playerCode);
 
+    function charCheck(joinedArr){
+      for (let i = 0; i < joinedArr.length; i++){
+        if (code.charAt(i) != joinedArr.charAt(i)) {
+          player.difficulties.shift();
+          code = player.generateCode();
 
     function charCheck(joinedArr){
       for (let i = 0; i < joinedArr.length; i++){
@@ -37,6 +43,7 @@ $(document).ready(function () {
           $(".playerShip").toggleClass("playerShipAnimationRight");
           $(".playerShip").toggleClass("playerShipAnimationLeft");
           $(".laserShotAnimation").css("animation-delay","0s");
+
           playerLetters = [];
           player.health -= 1;
           return code;
@@ -58,6 +65,7 @@ $(document).ready(function () {
       $(".laserShotR").toggleClass("laserShotAnimation");
       $(".playerShip").toggleClass("playerShipAnimationRight");
       $(".playerShip").toggleClass("playerShipAnimationLeft");
+
       $(".laserShotAnimation").css("animation-delay","0s");
 
       $(".playerCode").text("");
@@ -80,5 +88,4 @@ $(document).ready(function () {
 
     $(".laserShotAnimation").css("animation-delay","0s");
   }, 2000);
-
 });
