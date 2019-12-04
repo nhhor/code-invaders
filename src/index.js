@@ -73,14 +73,13 @@ $(document).ready(function() {
       return player.turnCounter ++;
     }
 
-    // INCORRECT CODE CONDITION
-    function charCheck(joinedArr) {
-      for (let i = 0; i < joinedArr.length; i++) {
-        if (code.charAt(i) != joinedArr.charAt(i)) {
-
+    function charCheck(joinedArr){
+      console.log(player.difficulties);
+      for (let i = 0; i < joinedArr.length; i++){
+        if(code.charAt(i) != joinedArr.charAt(i) && player.health > 1){
           playerLetters = [];
           player.health -= 1;
-          player.difficulties.shift();
+          // player.difficulties.shift();
           code = player.generateCode();
 
           $(".playerCode").text("");
@@ -107,9 +106,8 @@ $(document).ready(function() {
         }
       }
     }
-
     charCheck(playerCode);
-
+    
     function checkLevel() {
       if (player.score === 5) {
         $(".level").text("May the schwartz be with you");
@@ -122,13 +120,21 @@ $(document).ready(function() {
       } else if (player.score === 20) {
         $(".level").text("Kill....me! Ripelyyy");
         console.log('Difficulty 5');
+      } else if (player.score === 25){
+        $('.gradient').hide();
+        $('#winner').fadeIn();
+        console.log('You Win!');
+      } else {
+        console.log('Game ongoing');
       }
     }
-
     checkLevel();
 
-    function gameOver() {
-      if(player.health === 2){
+    function gameOver(){
+      if (player.difficulties.length === 0 && player.health < 1){
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      } else if(player.health === 2){
         $('#three-hearts').hide();
       } else if (player.health === 1){
         $('#two-hearts').hide();
@@ -137,10 +143,7 @@ $(document).ready(function() {
         $('.gradient').hide();
         $('#gameOver').fadeIn();
       }
-      console.log(player.health);
     }
-
     gameOver();
-
   });
 });
