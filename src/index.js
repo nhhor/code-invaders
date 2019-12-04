@@ -18,11 +18,6 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerCode").text(playerCode);
 
-    function charCheck(joinedArr){
-      for (let i = 0; i < joinedArr.length; i++){
-        if (code.charAt(i) != joinedArr.charAt(i)) {
-          player.difficulties.shift();
-          code = player.generateCode();
 
     function charCheck(joinedArr){
       for (let i = 0; i < joinedArr.length; i++){
