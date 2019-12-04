@@ -67,21 +67,30 @@ h1 {
   animation-name: rightMove;
   animation-duration: 2s;
   animation-delay: -2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  /* transform-style: preserve-3d; */
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes rightMove {
   0%   {left:0px; top:0px;}
-  25%  {left:25.5%; top:0px;}
-  75%  {left:25.5%; top:0px;}
+  25%  {left:25.5%; top:-10%;}
+  50%  {left:25.5%; top:-20%;}
+  75%  {left:25.5%; top:100%;}
   100%  {left:0px; top:0px;}
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(-180deg);}
 }
 
 @keyframes rightMove {
   0%   {left:0px; top:0px;}
-  25%  {left:25.5%; top:0px;}
-  75%  {left:25.5%; top:0px;}
-  100%  {left:0px; top:0px;}
+  25%  {left:25.5%; top:-10%;}
+  50%  {left:25.5%; top:-20%;}
+  75%  {left:25.5%; top:100%;}
+  100% {left:0px; top:0px;}
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(-180deg);}
 }
 
 .playerShipAnimationLeft {
@@ -90,21 +99,29 @@ h1 {
   animation-name: leftMove;
   animation-duration: 2s;
   animation-delay: 0s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
 }
 
 @keyframes leftMove {
   0%   {left:0px; top:0px;}
-  25%  {left:-25.5%; top:0px;}
-  75%  {left:-25.5%; top:0px;}
+  25%  {left:-25.5%; top:-10%;}
+  50%  {left:-25.5%; top:-20%;}
+  75%  {left:-25.5%; top:100%;}
   100%  {left:0px; top:0px;}
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(180deg);}
 }
 
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes leftMove {
   0%   {left:0px; top:0px;}
-  25%  {left:-25.5%; top:0px;}
-  75%  {left:-25.5%; top:0px;}
+  25%  {left:-25.5%; top:-10%;}
+  50%  {left:-25.5%; top:-20%;}
+  75%  {left:-25.5%; top:100%;}
   100%  {left:0px; top:0px;}
+  from {transform: rotateY(0deg);}
+  to {transform: rotateY(180deg);}
 }
 
 .laserShotAnimation {

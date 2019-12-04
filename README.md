@@ -35,7 +35,14 @@ This project was made as part of a team project for students at _[Epicodus](http
 ||||
 
 ## References
-* None
+* `Laser Cannon Sound` sound provided by [Mike Koenig](http://soundbible.com/1771-Laser-Cannon.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+* `Alien Death Ray Sound` sound provided by [Mike Koenig](http://soundbible.com/1274-Alien-Death-Ray.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+* `F15 Fighter Jet Flyby Sound` sound sourced [here](http://soundbible.com/1274-Alien-Death-Ray.html) under a Personal Use Only license.
+* `Blast Sound` sound provided by [Mike Koenig](http://soundbible.com/538-Blast.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+* `Bomb Sound` sound provided by [Mike Koenig](http://soundbible.com/1234-Bomb.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+* `Chamber Decompressing Sound` sound provided by [Mike Koenig](http://soundbible.com/1288-Chamber-Decompressing.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+
+
 
 ## Support and contact details
 Contact [example@sample.com](mailto:example@sample.com)
