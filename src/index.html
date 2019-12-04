@@ -12,7 +12,7 @@
       <h1>Code Invaders</h1>
       <div id="statRow" class="row">
         <div class="col-md-12">
-          <p>Score: <span class="score">0</span>/25</p>
+          <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
           <p id="health-bar"> <span id='one-heart'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='two-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='three-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> </p>
         </div>
       </div>
@@ -42,7 +42,6 @@
       </div>
       <div id="inputRow" class="row">
         <div class="col-md-4">
-
         </div>
         <div class="col-md-4">
           <label for=""></label>
@@ -50,17 +49,29 @@
           <p>Level: <span class="level">Space Walk</span></p>
         </div>
         <div class="col-md-4">
-
         </div>
       </div>
     </div>
   </div>
 </div>
 <div id="gameOver">
-  <h1>Game Over</h1>
   <img id="giantAlien" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/alien.png"/>
-  <br>
-  <button type="button" class='btn btn-lg' id='reset-game' name="button">Try again?</button>
+  <h1 id="gameOverHeader">Game Over</h1>
+  <div id="statRow" class="row">
+    <div class="col-md-12">
+      <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
+    </div>
+  </div>
+  <a href="./index.html" class='btn btn-lg' id='reset-game'>Try again?</a>
+</div>
+<div id='gameWon'>
+  <h1 id='gameWonHeader'>You Won!</h1>
+  <div id="statRow" class="row">
+    <div class="col-md-12">
+      <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
+    </div>
+  </div>
+  <a href="./index.html" class='btn btn-lg' id='reset-game'>Play again?</a>
 </div>
 </body>
 </html>
