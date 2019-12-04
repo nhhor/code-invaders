@@ -16,10 +16,6 @@ import lasercannon from './sounds/laser-cannon.mp3';
 const laserCannon = new Audio();
 laserCannon.src = lasercannon;
 
-
-
-
-
 $(document).ready(function () {
   let player = new Player();
   let code = player.generateCode();
@@ -60,6 +56,7 @@ $(document).ready(function () {
       $(".playerShip").toggleClass("playerShipAnimationRight");
       $(".playerShip").toggleClass("playerShipAnimationLeft");
 
+      $('.score').text(player.score);
 
       $(".playerCode").text("");
 
@@ -101,9 +98,39 @@ $(document).ready(function () {
         }
       }
     }
-
     charCheck(playerCode);
-    
+
+
+    function checkLevel() {
+      if (player.score === 5) {
+        $(".level").text("May the schwartz be with you");
+      } else if (player.score === 10) {
+        console.log('Difficulty 3');
+        $(".level").text("You still don't understand what you're dealing with...");
+      } else if (player.score === 15) {
+        $(".level").text("No weapons! No tricks! Just you and me!");
+        console.log('Difficulty 4');
+      } else if (player.score === 20) {
+        $(".level").text("Kill....me! Ripelyyy");
+        console.log('Difficulty 5');
+      }
+    }
+    checkLevel();
+
+    function gameOver(){
+      if(player.health === 2){
+        $('#three-hearts').hide();
+      } else if (player.health === 1){
+        $('#two-hearts').hide();
+      } else if(player.health < 1){
+        $('one-heart').hide();
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      }
+      console.log(player.health);
+    }
+    gameOver();
+
   });
 
   // DELAY ON STARTING ANIMATIONS

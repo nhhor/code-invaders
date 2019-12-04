@@ -30,6 +30,10 @@ h1 {
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+#health-bar img {
+  width: 3%;
+}
+
 #userInput {
   color: white;
   background-color: rgba(255, 255, 255, 0.5);
@@ -41,6 +45,10 @@ h1 {
 
 #userInput:focus {
   border: 2px solid purple;
+}
+
+.level {
+  color: orange;
 }
 
 .playerShip {
@@ -159,9 +167,16 @@ h1 {
 }
 
 #gameOver {
+  display: block;
   display: none;
+  margin-top: 400px;
+}
+
+#giantAlien {
+  width: 40%;
 }
 
 #reset-game {
   color: white;
+  margin-top: 20px;
 }

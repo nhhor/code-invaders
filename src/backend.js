@@ -11,22 +11,5 @@ export class Player {
       return this.difficulties[i];
     }
   }
-  checkScore() {
-    if (this.score === 0) {
-      console.log('score is: ', this.score);
-      console.log(this.difficulties[0]);
-    } else if (this.score === 5) {
-      console.log('Difficulty 2');
-      console.log(this.difficulties[1]);
-    } else if (this.score === 10) {
-      console.log('Difficulty 3');
-      console.log(this.difficulties[2]);
-    } else if (this.score === 15) {
-      console.log('Difficulty 4');
-      console.log(this.difficulties[3]);
-    } else if (this.score === 20) {
-      console.log('Difficulty 5');
-      console.log(this.difficulties[4]);
-    }
-  }
+
 }

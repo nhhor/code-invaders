@@ -12,8 +12,8 @@
       <h1>Code Invaders</h1>
       <div id="statRow" class="row">
         <div class="col-md-12">
-          <p>score: <span class="score"></span></p>
-          <p>❤️ ❤️ ❤️</p>
+          <p>Score: <span class="score">0</span>/25</p>
+          <p id="health-bar"> <span id='one-heart'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='two-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='three-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> </p>
         </div>
       </div>
       <div id="invaderRow" class="row">
@@ -47,7 +47,7 @@
         <div class="col-md-4">
           <label for=""></label>
           <input id="userInput" type="text">
-          <p>level: <span class="level"></span></p>
+          <p>Level: <span class="level">Space Walk</span></p>
         </div>
         <div class="col-md-4">
 
@@ -58,6 +58,8 @@
 </div>
 <div id="gameOver">
   <h1>GAME OVER</h1>
+  <img id="giantAlien" src="https://raw.githubusercontent.com/nhhor/code-invaders/backend/images/alien.png"/>
+  <br>
   <button type="button" class='btn btn-lg' id='reset-game' name="button">Try again?</button>
 </div>
 </body>
