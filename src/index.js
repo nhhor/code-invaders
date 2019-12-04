@@ -61,7 +61,7 @@ $(document).ready(function() {
         }, 850);
       }
 
-      setTimeout(function(){
+      setTimeout(function() {
         $(".laserShotL").removeClass("laserShotAnimation");
         $(".playerShip").removeClass("playerShipAnimationLeft");
         $(".laserShotR").removeClass("laserShotAnimation");
@@ -73,20 +73,20 @@ $(document).ready(function() {
       return player.turnCounter ++;
     }
 
-    function charCheck(joinedArr){
+    function charCheck(joinedArr) {
       console.log(player.difficulties);
-      for (let i = 0; i < joinedArr.length; i++){
-        if(code.charAt(i) != joinedArr.charAt(i) && player.health > 1){
+      for (let i = 0; i < joinedArr.length; i++) {
+        if(code.charAt(i) != joinedArr.charAt(i)) {
+
           playerLetters = [];
           player.health -= 1;
-          // player.difficulties.shift();
+
           code = player.generateCode();
 
           $(".playerCode").text("");
 
           setTimeout(function() {
             alienDeathRay.play();
-            // $('.invaderCode').text(code);
           }, 500);
 
           if (player.turnCounter % 2 === 0) {
@@ -107,10 +107,10 @@ $(document).ready(function() {
       }
     }
     charCheck(playerCode);
-    
+
     function checkLevel() {
       if (player.score === 5) {
-        $(".level").text("May the schwartz be with you");
+        $(".level").text("May the Schwartz be with you.");
       } else if (player.score === 10) {
         console.log('Difficulty 3');
         $(".level").text("You still don't understand what you're dealing with...");
@@ -118,7 +118,7 @@ $(document).ready(function() {
         $(".level").text("No weapons! No tricks! Just you and me!");
         console.log('Difficulty 4');
       } else if (player.score === 20) {
-        $(".level").text("Kill....me! Ripelyyy");
+        $(".level").text("Kill....me! Ripely");
         console.log('Difficulty 5');
       } else if (player.score === 25){
         $('.gradient').hide();
@@ -130,15 +130,15 @@ $(document).ready(function() {
     }
     checkLevel();
 
-    function gameOver(){
-      if (player.difficulties.length === 0 && player.health < 1){
+    function gameOver() {
+      if (player.difficulties.length === 0 && player.health < 1) {
         $('.gradient').hide();
         $('#gameOver').fadeIn();
-      } else if(player.health === 2){
+      } else if(player.health === 2) {
         $('#three-hearts').hide();
-      } else if (player.health === 1){
+      } else if (player.health === 1) {
         $('#two-hearts').hide();
-      } else if(player.health < 1){
+      } else if(player.health < 1) {
         $('one-heart').hide();
         $('.gradient').hide();
         $('#gameOver').fadeIn();
