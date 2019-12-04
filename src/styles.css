@@ -177,7 +177,11 @@ h1 {
   margin-top: 300px;
 }
 
-#gameOverHeader {
+#jupiter {
+  width: 40%;
+}
+
+#gameOverHeader, #gameWonHeader {
   padding: 0;
 }
 
