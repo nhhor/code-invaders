@@ -24,6 +24,12 @@ $(document).ready(function () {
           player.difficulties.shift();
           code = player.generateCode();
 
+    function charCheck(joinedArr){
+      for (let i = 0; i < joinedArr.length; i++){
+        if (code.charAt(i) != joinedArr.charAt(i)) {
+          player.difficulties.shift();
+          code = player.generateCode();
+
           $('.invaderCode').text(code);
           $("#userInput").val("");
           $(".playerCode").text("");
@@ -36,6 +42,7 @@ $(document).ready(function () {
           $(".laserShotR").toggleClass("laserShotAnimation");
           $(".playerShip").toggleClass("playerShipAnimationRight");
           $(".playerShip").toggleClass("playerShipAnimationLeft");
+          $(".laserShotAnimation").css("animation-delay","0s");
 
           playerLetters = [];
           player.health -= 1;
@@ -43,15 +50,9 @@ $(document).ready(function () {
         }
       }
     }
+
     charCheck(playerCode);
-    function gameOver(){
-      if(player.health < 1){
-        $('.gradient').hide();
-        $('#gameOver').fadeIn();
-        // alert('Game Over!');
-      }
-    }
-    gameOver();
+    console.log("player.difficulties B: ",player.difficulties);
 
     console.log(playerCode);
     if(playerCode === code){
@@ -60,11 +61,12 @@ $(document).ready(function () {
         $(".invaderCodeL").fadeToggle(200);
       }, 1000);
 
-
       $(".laserShotL").toggleClass("laserShotAnimation");
       $(".laserShotR").toggleClass("laserShotAnimation");
       $(".playerShip").toggleClass("playerShipAnimationRight");
       $(".playerShip").toggleClass("playerShipAnimationLeft");
+
+      $(".laserShotAnimation").css("animation-delay","0s");
 
       $(".playerCode").text("");
 
@@ -78,4 +80,12 @@ $(document).ready(function () {
       return true;
     }
   });
+
+  // DELAY ON STARTING ANIMATIONS
+  setTimeout(function() {
+    $(".playerShipAnimationRight").css("animation-delay","0s");
+    $(".playerShipAnimationLeft").css("animation-delay","0s");
+
+    $(".laserShotAnimation").css("animation-delay","0s");
+  }, 2000);
 });
