@@ -12,7 +12,8 @@
   },
   "keywords": [],
   "author": "Noah Horwitz, Chris Sanchez, Courtney Schild, Celeste Morton",
-  "license": "gpl-3.0",
+  "license": "GPL-3.0-or-later",
+  "repository": "https://github.com/nhhor/code-invaders.git",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
