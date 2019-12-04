@@ -116,14 +116,11 @@ $(document).ready(function() {
         $(".level").text("You still don't understand what you're dealing with...");
       } else if (player.score === 15) {
         $(".level").text("No weapons! No tricks! Just you and me!");
-        console.log('Difficulty 4');
       } else if (player.score === 20) {
-        $(".level").text("Kill....me! Ripely");
-        console.log('Difficulty 5');
-      } else if (player.score === 25){
+        $(".level").text("Kill....me! Ripley");
+      } else if (player.score === 3){
         $('.gradient').hide();
-        $('#winner').fadeIn();
-        console.log('You Win!');
+        $('#gameWon').fadeIn();
       } else {
         console.log('Game ongoing');
       }

@@ -60,13 +60,18 @@
   <div id="statRow" class="row">
     <div class="col-md-12">
       <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
-      <p id="health-bar"> <span id='one-heart'> <img src="" alt=""> </span> <span id='two-hearts'> <img src="" alt=""> </span> <span id='three-hearts'> <img src="" alt=""> </span> </p>
     </div>
   </div>
-  <button type="button" class='btn btn-lg' id='reset-game' name="button">Try again?</button>
+  <a href="./index.html" class='btn btn-lg' id='reset-game'>Try again?</a>
 </div>
-<div id='winner'>
-  <h1>You Won!</h1>
+<div id='gameWon'>
+  <h1 id='gameWonHeader'>You Won!</h1>
+  <div id="statRow" class="row">
+    <div class="col-md-12">
+      <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
+    </div>
+  </div>
+  <a href="./index.html" class='btn btn-lg' id='reset-game'>Play again?</a>
 </div>
 </body>
 </html>
