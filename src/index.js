@@ -118,7 +118,7 @@ $(document).ready(function() {
         $(".level").text("No weapons! No tricks! Just you and me!");
       } else if (player.score === 20) {
         $(".level").text("Kill....me! Ripley");
-      } else if (player.score === 3){
+      } else if (player.score === 25){
         $('.gradient').hide();
         $('#gameWon').fadeIn();
       } else {
