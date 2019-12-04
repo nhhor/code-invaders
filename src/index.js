@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 // AUDIO TEMPLATE FOR IMPORTING AND SET-UP
-// import tick from './audio/tick.mp3';
+// import tick from './sounds/tick.mp3';
 // const tickSound = new Audio();
 // tickSound.src = tick;
 
@@ -16,11 +16,17 @@ import lasercannon from './sounds/laser-cannon.mp3';
 const laserCannon = new Audio();
 laserCannon.src = lasercannon;
 
+import aliendeathray from './sounds/alien-death-ray.mp3';
+const alienDeathRay = new Audio();
+alienDeathRay.src = aliendeathray;
+
 $(document).ready(function () {
+
   let player = new Player();
+  player.turnCounter = 0;
   let code = player.generateCode();
-  $('.invaderCode').text(code);
   let playerLetters = [];
+  $('.invaderCode').text(code);
   $("#userInput").focus();
   $("#userInput").select();
 
@@ -31,70 +37,88 @@ $(document).ready(function () {
     let playerCode = playerLetters.join('');
     $(".playerCode").text(playerCode);
 
-    if(playerCode === code){
-      $(".laserShotAnimation").css("animation-delay","0s");
-
-      laserCannon.play();
+    // CORRECT CODE CONDITION
+    if (playerCode === code) {
 
       playerLetters = [];
       player.score += 1;
-      player.checkScore(player.score);
       player.difficulties.shift();
       code = player.generateCode();
+
+      $(".playerCode").text("");
 
       setTimeout(function(){
         $('.invaderCode').text(code);
       }, 1000);
 
-      setTimeout(function() {
-        $(".invaderCodeR").fadeToggle(250);
-        $(".invaderCodeL").fadeToggle(250);
-      }, 850);
+      laserCannon.play();
 
-      $(".laserShotL").toggleClass("laserShotAnimation");
-      $(".laserShotR").toggleClass("laserShotAnimation");
-      $(".playerShip").toggleClass("playerShipAnimationRight");
-      $(".playerShip").toggleClass("playerShipAnimationLeft");
+      if (player.turnCounter % 2 === 0) {
+        $(".laserShotL").addClass("laserShotAnimation");
+        $(".playerShip").addClass("playerShipAnimationLeft");
+        setTimeout(function() {
+          $(".invaderCodeL").fadeOut(250);
+          $(".invaderCodeR").fadeIn(250);
+        }, 850);
+      } else {
+        $(".laserShotR").addClass("laserShotAnimation");
+        $(".playerShip").addClass("playerShipAnimationRight");
+        setTimeout(function() {
+          $(".invaderCodeR").fadeOut(250);
+          $(".invaderCodeL").fadeIn(250);
+        }, 850);
+      }
+
+      setTimeout(function(){
+        $(".laserShotL").removeClass("laserShotAnimation");
+        $(".playerShip").removeClass("playerShipAnimationLeft");
+        $(".laserShotR").removeClass("laserShotAnimation");
+        $(".playerShip").removeClass("playerShipAnimationRight");
+      }, 2000);
 
       $('.score').text(player.score);
 
-      $(".playerCode").text("");
-
-      return true;
+      return player.turnCounter ++;
     }
 
+    // INCORRECT CODE CONDITION
     function charCheck(joinedArr){
       for (let i = 0; i < joinedArr.length; i++){
         if (code.charAt(i) != joinedArr.charAt(i)) {
-          $(".laserShotAnimation").css("animation-delay","-2s");
           playerLetters = [];
           player.health -= 1;
           player.difficulties.shift();
           code = player.generateCode();
 
           setTimeout(function(){
+            alienDeathRay.play();
             $('.invaderCode').text(code);
-          }, 1000);
+          }, 500);
 
-          setTimeout(function() {
-            $(".invaderCodeR").fadeToggle(250);
-            $(".invaderCodeL").fadeToggle(250);
-          }, 850);
+          if (player.turnCounter % 2 === 0) {
+            $(".playerShip").addClass("playerShipAnimationRight");
+            // setTimeout(function() {
+            //   $(".invaderCodeL").fadeOut(250);
+            //   $(".invaderCodeR").fadeIn(250);
+            // }, 850);
+          } else {
+            $(".playerShip").addClass("playerShipAnimationLeft");
+            // setTimeout(function() {
+            //   $(".invaderCodeR").fadeOut(250);
+            //   $(".invaderCodeL").fadeIn(250);
+            // }, 850);
+          }
 
-          $(".laserShotL").toggleClass("laserShotAnimation");
-          $(".laserShotR").toggleClass("laserShotAnimation");
-
-          $(".playerShip").toggleClass("playerShipAnimationRight");
-          $(".playerShip").toggleClass("playerShipAnimationLeft");
-
-
-          // setTimeout(function(){
-          //   $(".laserShotAnimation").css("animation-delay","0s");
-          // }, 500);
+          setTimeout(function(){
+            $(".laserShotL").removeClass("laserShotAnimation");
+            $(".playerShip").removeClass("playerShipAnimationLeft");
+            $(".laserShotR").removeClass("laserShotAnimation");
+            $(".playerShip").removeClass("playerShipAnimationRight");
+          }, 2000);
 
           $(".playerCode").text("");
 
-          return code;
+          return player.turnCounter +=2;
         }
       }
     }
@@ -131,13 +155,15 @@ $(document).ready(function () {
     }
     gameOver();
 
+    console.log("TURN #: ",player.turnCounter);
+
   });
 
   // DELAY ON STARTING ANIMATIONS
-  setTimeout(function() {
-    $(".playerShipAnimationRight").css("animation-delay","0s");
-    $(".playerShipAnimationLeft").css("animation-delay","0s");
-
-    $(".laserShotAnimation").css("animation-delay","0s");
-  }, 2000);
+  // setTimeout(function() {
+  //   $(".playerShipAnimationRight").css("animation-delay","0s");
+  //   $(".playerShipAnimationLeft").css("animation-delay","0s");
+  //
+  //   $(".laserShotAnimation").css("animation-delay","0s");
+  // }, 2000);
 });
