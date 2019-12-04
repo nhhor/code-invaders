@@ -47,6 +47,10 @@ h1 {
   border: 2px solid purple;
 }
 
+.level {
+  color: orange;
+}
+
 .playerShip {
   position: relative;
   margin: 1rem;
@@ -163,10 +167,16 @@ h1 {
 }
 
 #gameOver {
+  display: block;
   display: none;
   margin-top: 400px;
 }
 
+#giantAlien {
+  width: 40%;
+}
+
 #reset-game {
   color: white;
+  margin-top: 20px;
 }
