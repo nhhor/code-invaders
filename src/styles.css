@@ -15,7 +15,7 @@ body {
 h1 {
   color: orange;
   font-family: 'VT323', monospace;
-  font-size: 96px;
+  font-size: calc(96px + 0.5vw);
   letter-spacing: 2rem;
   text-transform: uppercase;
   padding-bottom: 120px;
