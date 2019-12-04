@@ -12,8 +12,6 @@ import './styles.css';
 // AUDIO TEMPLATE FOR TRIGGER
 // tickSound.play();
 
-
-
 $(document).ready(function () {
   let player = new Player();
   let code = player.generateCode();
@@ -55,9 +53,21 @@ $(document).ready(function () {
         }
       }
     }
-
     charCheck(playerCode);
-    console.log("player.difficulties B: ",player.difficulties);
+
+    function gameOver(){
+      if(player.health === 2){
+        $('#three-hearts').hide();
+      } else if (player.health === 1){
+        $('#two-hearts').hide();
+      } else if(player.health < 1){
+        $('one-heart').hide();
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      }
+      console.log(player.health);
+    }
+    gameOver();
 
     console.log(playerCode);
     if(playerCode === code){
