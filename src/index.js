@@ -4,6 +4,16 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+// AUDIO TEMPLATE FOR IMPORTING AND SET-UP
+// import tick from './audio/tick.mp3';
+// const tickSound = new Audio();
+// tickSound.src = tick;
+
+// AUDIO TEMPLATE FOR TRIGGER
+// tickSound.play();
+
+
+
 $(document).ready(function () {
   let player = new Player();
   let code = player.generateCode();
