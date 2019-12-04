@@ -47,14 +47,14 @@ $(document).ready(function() {
 
       if (player.turnCounter % 2 === 0) {
         $(".laserShotL").addClass("laserShotAnimation");
-        $(".playerShip").addClass("playerShipAnimationLeft");
+        $(".playerShip").addClass("playerShipBarrelRollLeft");
         setTimeout(function() {
           $(".invaderCodeL").fadeOut(250);
           $(".invaderCodeR").fadeIn(250);
         }, 850);
       } else {
         $(".laserShotR").addClass("laserShotAnimation");
-        $(".playerShip").addClass("playerShipAnimationRight");
+        $(".playerShip").addClass("playerShipBarrelRollRight");
         setTimeout(function() {
           $(".invaderCodeR").fadeOut(250);
           $(".invaderCodeL").fadeIn(250);
@@ -63,9 +63,9 @@ $(document).ready(function() {
 
       setTimeout(function(){
         $(".laserShotL").removeClass("laserShotAnimation");
-        $(".playerShip").removeClass("playerShipAnimationLeft");
+        $(".playerShip").removeClass("playerShipBarrelRollLeft");
         $(".laserShotR").removeClass("laserShotAnimation");
-        $(".playerShip").removeClass("playerShipAnimationRight");
+        $(".playerShip").removeClass("playerShipBarrelRollRight");
       }, 2000);
 
       $('.score').text(player.score);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
           playerLetters = [];
           player.health -= 1;
-          player.difficulties.shift();
+          
           code = player.generateCode();
 
           $(".playerCode").text("");
@@ -91,16 +91,16 @@ $(document).ready(function() {
           }, 500);
 
           if (player.turnCounter % 2 === 0) {
-            $(".playerShip").addClass("playerShipAnimationRight");
+            $(".playerShip").addClass("playerShipSpinOutRight");
           } else {
-            $(".playerShip").addClass("playerShipAnimationLeft");
+            $(".playerShip").addClass("playerShipSpinOutLeft");
           }
 
           setTimeout(function() {
             $(".laserShotL").removeClass("laserShotAnimation");
-            $(".playerShip").removeClass("playerShipAnimationLeft");
+            $(".playerShip").removeClass("playerShipSpinOutLeft");
             $(".laserShotR").removeClass("laserShotAnimation");
-            $(".playerShip").removeClass("playerShipAnimationRight");
+            $(".playerShip").removeClass("playerShipSpinOutRight");
           }, 2000);
 
           return player.turnCounter += 2;
