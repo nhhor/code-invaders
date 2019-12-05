@@ -120,6 +120,9 @@ $(document).ready(function() {
       laserCannon.play();
 
       if (player.turnCounter % 2 === 0) {
+        $(".playerShip").removeClass("playerShipMovement");
+
+
         $(".laserShotL").addClass("laserShotAnimation");
         $(".playerShip").addClass("playerShipBarrelRollLeft");
         setTimeout(function() {
@@ -127,6 +130,8 @@ $(document).ready(function() {
           $(".invaderCodeR").fadeIn(250);
         }, 850);
       } else {
+        $(".playerShip").removeClass("playerShipMovement");
+
         $(".laserShotR").addClass("laserShotAnimation");
         $(".playerShip").addClass("playerShipBarrelRollRight");
         setTimeout(function() {
@@ -140,6 +145,8 @@ $(document).ready(function() {
         $(".playerShip").removeClass("playerShipBarrelRollLeft");
         $(".laserShotR").removeClass("laserShotAnimation");
         $(".playerShip").removeClass("playerShipBarrelRollRight");
+        $(".playerShip").addClass("playerShipMovement");
+
       }, 2000);
 
       $('.score').text(player.score);
@@ -164,8 +171,12 @@ $(document).ready(function() {
           }, 500);
 
           if (player.turnCounter % 2 === 0) {
+            $(".playerShip").removeClass("playerShipMovement");
+
             $(".playerShip").addClass("playerShipSpinOutRight");
           } else {
+            $(".playerShip").removeClass("playerShipMovement");
+
             $(".playerShip").addClass("playerShipSpinOutLeft");
           }
 
@@ -174,6 +185,8 @@ $(document).ready(function() {
             $(".playerShip").removeClass("playerShipSpinOutLeft");
             $(".laserShotR").removeClass("laserShotAnimation");
             $(".playerShip").removeClass("playerShipSpinOutRight");
+            $(".playerShip").addClass("playerShipMovement");
+
           }, 2000);
           return player.turnCounter += 2;
         }
