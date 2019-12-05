@@ -12,16 +12,36 @@ import aliendeathray from './sounds/alien-death-ray.mp3';
 const alienDeathRay = new Audio();
 alienDeathRay.src = aliendeathray;
 
+import spacemusic from './sounds/SpaceMusic.mp3';
+const spaceMusic = new Audio();
+spaceMusic.src = spacemusic;
+
+import ewofsad from './sounds/EwofSad.mp3';
+const ewofSad = new Audio();
+ewofSad.src = ewofsad;
+
+spaceMusic.addEventListener('ended', function() {
+  this.currentTime = 0;
+  this.play();
+}, false);
+
+ewofSad.addEventListener('ended', function() {
+  this.currentTime = 0;
+  this.play();
+}, false);
+
 $(document).ready(function() {
   $('.splash-screen').hide();
   $('.splash-screen').fadeIn(1500);
-  $('#play-game').click(function(){
+  $('#play-game').click(function() {
     $('#splash-screen-text').fadeOut(1500);
-    setTimeout(function(){
+    setTimeout(function() {
       $('.gradient').fadeIn(1500);
-    },1500)
-
+    }, 1500)
   })
+
+  spaceMusic.play();
+
   let player = new Player();
   player.turnCounter = 0;
   let code = player.generateCode();
@@ -151,6 +171,8 @@ $(document).ready(function() {
         $('one-heart').hide();
         $('.gradient').hide();
         $('#gameOver').fadeIn();
+        spaceMusic.pause();
+        ewofSad.play();
       }
     }
     gameOver();
