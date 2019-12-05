@@ -79,7 +79,7 @@ p {
   color: lightgreen !important;
 }
 
-.score, .possibleScore, .roundTime, .level {
+.score, .possibleScore, .roundTime, .level, .totalScore {
   color: white;
 }
 
