@@ -1,13 +1,13 @@
 # Application: **Solar Age Calculator**
 
-##### By Noah Horwitz, Celeste Morton, Chris Sanchez, & Courtney Schild
+##### By Noah Horwitz, Celeste Morton, Chris Sanchez & Courtney Schild
 
 ###### _First published 2019-12-02_
 
 ## Description:
-This project was made as part of a team project for students at _[Epicodus](http://www.epicodus.com)_, a vocational school for technology careers, based in Portland, OR. The project is designed to ...
+This project was made as part of a team project for students at [Epicodus](http://www.epicodus.com), a vocational school for technology careers, based in Portland, OR. The project is designed to help users practice typing code through an interactive space-themed game.
 
-<!-- The fully deployed project is hosted on GH-Pages [HERE](https://nhhor.github.io/code-invaders). -->
+The fully deployed project is hosted on GitHub Pages [here](https://nhhor.github.io/code-invaders).
 
 ## Setup/Installation instructions:
 * Click the `Clone or download` button and copy the link.
@@ -23,29 +23,24 @@ This project was made as part of a team project for students at _[Epicodus](http
 > `JavaScript`
 > `jQuery`
 > `Node Package Manager`
-> `WebPack`
+> `webpack`
 
 ## Known Bugs
 * None
 
-## Test Driven Development Specifications
+<!-- ## Test-Driven Development Specifications -->
 
-|Spec|Input|Output|
+<!-- |Spec|Input|Output|
 |-|-|-|
-||||
+|||| -->
 
 ## References
 * `Laser Cannon Sound` sound provided by [Mike Koenig](http://soundbible.com/1771-Laser-Cannon.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
 * `Alien Death Ray Sound` sound provided by [Mike Koenig](http://soundbible.com/1274-Alien-Death-Ray.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
-* `F15 Fighter Jet Flyby Sound` sound sourced [here](http://soundbible.com/1274-Alien-Death-Ray.html) under a Personal Use Only license.
-* `Blast Sound` sound provided by [Mike Koenig](http://soundbible.com/538-Blast.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
-* `Bomb Sound` sound provided by [Mike Koenig](http://soundbible.com/1234-Bomb.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
-* `Chamber Decompressing Sound` sound provided by [Mike Koenig](http://soundbible.com/1288-Chamber-Decompressing.html) under the [Attribution 3.0](https://creativecommons.org/licenses/by/3.0/us/) license.
+* All music sourced from [YouTube](https://www.youtube.com/).
 
-
-
-## Support and contact details
-Contact [example@sample.com](mailto:example@sample.com)
+<!-- ## Support and contact details
+Contact [example@sample.com](mailto:example@sample.com) -->
 
 ## License
-_This This repository is copyright (C) 2019 by Noah Horwitz, Celeste Morton, Chris Sanchez, & Courtney Schild and licensed under the GNU General Public License v3.0 [gpl-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)_.
+_This repository is copyright &copy; 2019 by Noah Horwitz, Celeste Morton, Chris Sanchez & Courtney Schild and licensed under the GNU General Public License v3.0 [gpl-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)_.

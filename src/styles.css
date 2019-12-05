@@ -170,9 +170,7 @@ p {
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes rightSpinOut {
   0%   {left:0px; top:0px;}
-  25%  {left:25.5%; top:-10%;}
-  50%  {left:25.5%; top:-20%;}
-  75%  {left:25.5%; top:100%;}
+  25%  {left:25.5%; top:0px;}
   100%  {left:0px; top:0px;}
   from {transform: rotateZ(0deg);}
   to {transform: rotateZ(360deg);}
@@ -180,9 +178,7 @@ p {
 
 @keyframes rightSpinOut {
   0%   {left:0px; top:0px;}
-  25%  {left:25.5%; top:-10%;}
-  50%  {left:25.5%; top:-20%;}
-  75%  {left:25.5%; top:100%;}
+  25%  {left:25.5%; top:0px;}
   100% {left:0px; top:0px;}
   from {transform: rotateZ(0deg);}
   to {transform: rotateZ(360deg);}
@@ -238,9 +234,7 @@ p {
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes leftSpinOut {
   0%   {left:0px; top:0px;}
-  25%  {left:-25.5%; top:-10%;}
-  50%  {left:-25.5%; top:-20%;}
-  75%  {left:-25.5%; top:100%;}
+  25%  {left:-25.5%; top:0px;}
   100%  {left:0px; top:0px;}
   from {transform: rotateZ(0deg);}
   to {transform: rotateZ(-360deg);}
@@ -248,9 +242,7 @@ p {
 
 @keyframes leftSpinOut {
   0%   {left:0px; top:0px;}
-  25%  {left:-25.5%; top:-10%;}
-  50%  {left:-25.5%; top:-20%;}
-  75%  {left:-25.5%; top:100%;}
+  25%  {left:-25.5%; top:0px;}
   100% {left:0px; top:0px;}
   from {transform: rotateZ(0deg);}
   to {transform: rotateZ(-360deg);}
