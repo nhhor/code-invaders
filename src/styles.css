@@ -21,6 +21,26 @@ h1 {
   padding-bottom: 120px;
 }
 
+#splash-screen-text h1 {
+  padding: 0px;
+  /* border: 1px solid red;
+  border-left: 0px;
+  border-right: 0px; */
+  margin-top: 500px;
+}
+
+#play-game {
+  padding: 10px 35px;
+  letter-spacing: 7px;
+  color: white;
+  border: 2px solid lightgreen;
+}
+
+#play-game:hover {
+  border: 4px solid lightgreen;
+  cursor: pointer;
+}
+
 .container {
   padding-top: 120px;
 }
@@ -28,6 +48,11 @@ h1 {
 .gradient {
   height: 100vh;
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  display: none;
+}
+
+#statRow {
+  font-size: 30px;
 }
 
 .score, .possibleScore {
@@ -236,7 +261,7 @@ h1 {
 #gameOver, #gameWon {
   display: block;
   display: none;
-  margin-top: 300px;
+  margin-top: 180px;
 }
 
 #jupiter {
@@ -248,18 +273,36 @@ h1 {
 }
 
 #giantAlien {
-  width: 40%;
+  -webkit-animation-name: myAlien; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: myAlien;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  width: 65%;
+}
+
+@-webkit-keyframes myAlien {
+  0%   {width: 1%;}
+  75%  {width: 80%;}
+  100% {width: 65%;}
+}
+
+/* Standard syntax */
+@keyframes myAlien {
+  0%   {width: 1%;}
+  75%  {width: 80%;}
+  100% {width: 65%;}
 }
 
 #reset-game {
   color: white;
-  border: 2px solid purple;
+  border: 2px solid red;
   padding: 10px 35px;
   letter-spacing: 7px;
 }
 
 #reset-game:hover {
-  background-color: orange;
-  color: purple;
-  border: 4px solid purple;
+  color: white;
+  border: 4px solid red;
 }
