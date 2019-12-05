@@ -12,7 +12,27 @@ import aliendeathray from './sounds/alien-death-ray.mp3';
 const alienDeathRay = new Audio();
 alienDeathRay.src = aliendeathray;
 
+import spacemusic from './sounds/SpaceMusic.mp3';
+const spaceMusic = new Audio();
+spaceMusic.src = spacemusic;
+
+import ewofsad from './sounds/EwofSad.mp3';
+const ewofSad = new Audio();
+ewofSad.src = ewofsad;
+
+spaceMusic.addEventListener('ended', function() {
+  this.currentTime = 0;
+  this.play();
+}, false);
+
+ewofSad.addEventListener('ended', function() {
+  this.currentTime = 0;
+  this.play();
+}, false);
+
 $(document).ready(function() {
+
+  spaceMusic.play();
 
   let player = new Player();
   player.turnCounter = 0;
@@ -80,14 +100,13 @@ $(document).ready(function() {
 
           playerLetters = [];
           player.health -= 1;
-          
+
           code = player.generateCode();
 
           $(".playerCode").text("");
 
           setTimeout(function() {
             alienDeathRay.play();
-            // $('.invaderCode').text(code);
           }, 500);
 
           if (player.turnCounter % 2 === 0) {
@@ -112,7 +131,7 @@ $(document).ready(function() {
 
     function checkLevel() {
       if (player.score === 5) {
-        $(".level").text("May the schwartz be with you");
+        $(".level").text("May the Schwartz be with you.");
       } else if (player.score === 10) {
         console.log('Difficulty 3');
         $(".level").text("You still don't understand what you're dealing with...");
@@ -120,7 +139,7 @@ $(document).ready(function() {
         $(".level").text("No weapons! No tricks! Just you and me!");
         console.log('Difficulty 4');
       } else if (player.score === 20) {
-        $(".level").text("Kill....me! Ripelyyy");
+        $(".level").text("Kill....me! Ripleyyy!");
         console.log('Difficulty 5');
       }
     }
@@ -136,6 +155,8 @@ $(document).ready(function() {
         $('one-heart').hide();
         $('.gradient').hide();
         $('#gameOver').fadeIn();
+        spaceMusic.pause();
+        ewofSad.play();
       }
       console.log(player.health);
     }
