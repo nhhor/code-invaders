@@ -72,7 +72,9 @@ $(document).ready(function() {
         let roundTime = parseFloat(player.time).toFixed(2);
         $('.roundTime').text(roundTime);
         // return roundTime;
-        if (roundTime <=0.09) {
+        if(player.health < 1){
+          clearInterval(timer);
+        } else if (roundTime <=0.09) {
           clearInterval(timer);
           $('.roundTime').text(roundTime);
           player.health = 0;
