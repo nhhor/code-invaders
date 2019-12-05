@@ -55,7 +55,7 @@ h1 {
   font-size: 30px;
 }
 
-.score, .possibleScore {
+.score, .possibleScore, .roundTime {
   color: orange;
 }
 

@@ -30,28 +30,70 @@ ewofSad.addEventListener('ended', function() {
   this.play();
 }, false);
 
+let player = new Player();
+
+function gameOver() {
+  if (player.difficulties.length === 0 && player.health < 1) {
+    // clearInterval(newTime);
+    $('.gradient').hide();
+    $('#gameOver').fadeIn();
+  } else if(player.health === 2) {
+    $('#three-hearts').hide();
+  } else if (player.health === 1) {
+    $('#two-hearts').hide();
+  } else if(player.health < 1) {
+    $('one-heart').hide();
+    $('.gradient').hide();
+    $('#gameOver').fadeIn();
+    spaceMusic.pause();
+    ewofSad.play();
+  }
+}
+
 $(document).ready(function() {
   $('.splash-screen').hide();
   $('.splash-screen').fadeIn(1500);
+
   $('#play-game').click(function() {
     $('#splash-screen-text').fadeOut(1500);
     setTimeout(function() {
       $('.gradient').fadeIn(1500);
-    }, 1500)
-  })
+    }, 1500);
+
+    setTimeout(function() {
+      $("#userInput").focus();
+      $("#userInput").select();
+    }, 1500);
+
+    // TIMER FUNCTION
+    let timeFunction = setTimeout(function(){
+      let timer = setInterval(function() {
+        let newTime = player.time -= .1;
+        let roundTime = parseFloat(player.time).toFixed(2);
+        $('.roundTime').text(roundTime);
+        // return roundTime;
+        if (roundTime <=0.09) {
+          clearInterval(timer);
+          $('.roundTime').text(roundTime);
+          player.health = 0;
+          gameOver();
+          console.log(roundTime);
+        } else if (player.score > 24) {
+          clearInterval(timer);
+          $('.roundTime').text(roundTime);
+        }
+      }, 100);
+    }, 3000);
+  });
 
   spaceMusic.play();
 
-  let player = new Player();
   player.turnCounter = 0;
   let code = player.generateCode();
   let playerLetters = [];
   $('.invaderCode').text(code);
-  $("#userInput").focus();
-  $("#userInput").select();
 
   $("#userInput").keyup(function() {
-
     playerLetters.push($("#userInput").val());
     $("#userInput").val("");
     let playerCode = playerLetters.join('');
@@ -59,12 +101,11 @@ $(document).ready(function() {
 
     // CORRECT CODE CONDITION
     if (playerCode === code) {
-
+      player.time+= 7;
       playerLetters = [];
       player.score += 1;
       player.difficulties.shift();
       code = player.generateCode();
-
       $(".playerCode").text("");
 
       setTimeout(function() {
@@ -97,7 +138,6 @@ $(document).ready(function() {
       }, 2000);
 
       $('.score').text(player.score);
-
       return player.turnCounter ++;
     }
 
@@ -105,12 +145,9 @@ $(document).ready(function() {
       console.log(player.difficulties);
       for (let i = 0; i < joinedArr.length; i++) {
         if(code.charAt(i) != joinedArr.charAt(i)) {
-
           playerLetters = [];
           player.health -= 1;
-
           code = player.generateCode();
-
           $(".playerCode").text("");
 
           setTimeout(function() {
@@ -129,7 +166,6 @@ $(document).ready(function() {
             $(".laserShotR").removeClass("laserShotAnimation");
             $(".playerShip").removeClass("playerShipSpinOutRight");
           }, 2000);
-
           return player.turnCounter += 2;
         }
       }
@@ -158,23 +194,6 @@ $(document).ready(function() {
       }
     }
     checkLevel();
-
-    function gameOver() {
-      if (player.difficulties.length === 0 && player.health < 1) {
-        $('.gradient').hide();
-        $('#gameOver').fadeIn();
-      } else if(player.health === 2) {
-        $('#three-hearts').hide();
-      } else if (player.health === 1) {
-        $('#two-hearts').hide();
-      } else if(player.health < 1) {
-        $('one-heart').hide();
-        $('.gradient').hide();
-        $('#gameOver').fadeIn();
-        spaceMusic.pause();
-        ewofSad.play();
-      }
-    }
     gameOver();
   });
 });
