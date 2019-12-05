@@ -81,7 +81,7 @@ $(document).ready(function() {
         }, 850);
       }
 
-      setTimeout(function(){
+      setTimeout(function() {
         $(".laserShotL").removeClass("laserShotAnimation");
         $(".playerShip").removeClass("playerShipBarrelRollLeft");
         $(".laserShotR").removeClass("laserShotAnimation");
@@ -93,10 +93,10 @@ $(document).ready(function() {
       return player.turnCounter ++;
     }
 
-    // INCORRECT CODE CONDITION
     function charCheck(joinedArr) {
+      console.log(player.difficulties);
       for (let i = 0; i < joinedArr.length; i++) {
-        if (code.charAt(i) != joinedArr.charAt(i)) {
+        if(code.charAt(i) != joinedArr.charAt(i)) {
 
           playerLetters = [];
           player.health -= 1;
@@ -126,7 +126,6 @@ $(document).ready(function() {
         }
       }
     }
-
     charCheck(playerCode);
 
     function checkLevel() {
@@ -137,31 +136,33 @@ $(document).ready(function() {
         $(".level").text("You still don't understand what you're dealing with...");
       } else if (player.score === 15) {
         $(".level").text("No weapons! No tricks! Just you and me!");
-        console.log('Difficulty 4');
       } else if (player.score === 20) {
-        $(".level").text("Kill....me! Ripleyyy!");
-        console.log('Difficulty 5');
+        $(".level").text("Kill....me! Ripley");
+      } else if (player.score === 25){
+        $('.gradient').hide();
+        $('#gameWon').fadeIn();
+      } else {
+        console.log('Game ongoing');
       }
     }
-
     checkLevel();
 
     function gameOver() {
-      if(player.health === 2){
+      if (player.difficulties.length === 0 && player.health < 1) {
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      } else if(player.health === 2) {
         $('#three-hearts').hide();
-      } else if (player.health === 1){
+      } else if (player.health === 1) {
         $('#two-hearts').hide();
-      } else if(player.health < 1){
+      } else if(player.health < 1) {
         $('one-heart').hide();
         $('.gradient').hide();
         $('#gameOver').fadeIn();
         spaceMusic.pause();
         ewofSad.play();
       }
-      console.log(player.health);
     }
-
     gameOver();
-
   });
 });
