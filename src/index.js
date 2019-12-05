@@ -144,7 +144,11 @@ $(document).ready(function() {
     function charCheck(joinedArr) {
       console.log(player.difficulties);
       for (let i = 0; i < joinedArr.length; i++) {
-        if(code.charAt(i) != joinedArr.charAt(i)) {
+        if (joinedArr === "~") {
+          player.score = 25;
+          $('.score').text(player.score);
+        } else if(code.charAt(i) != joinedArr.charAt(i)) {
+
           playerLetters = [];
           player.health -= 1;
           code = player.generateCode();
@@ -172,6 +176,28 @@ $(document).ready(function() {
     }
     charCheck(playerCode);
 
+    function gameOver() {
+      if (player.difficulties.length === 0 && player.health < 1) {
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+      } else if(player.health === 4) {
+        $('.five-hearts').hide();
+      } else if(player.health === 3) {
+        $('.four-hearts').hide();
+      } else if(player.health === 2) {
+        $('.three-hearts').hide();
+      } else if (player.health === 1) {
+        $('.two-hearts').hide();
+      } else if(player.health < 1) {
+        $('.one-heart').hide();
+        $('.gradient').hide();
+        $('#gameOver').fadeIn();
+        spaceMusic.pause();
+        ewofSad.play();
+      }
+    }
+    gameOver();
+
     function checkLevel() {
       if (player.score === 5) {
         $(".level").text("May the Schwartz be with you.");
@@ -194,6 +220,7 @@ $(document).ready(function() {
       }
     }
     checkLevel();
+
     gameOver();
   });
 });

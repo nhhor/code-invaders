@@ -7,20 +7,24 @@
   <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="splash-screen">
-    <div id="splash-screen-text">
-      <h1>Code Invaders</h1>
-      <p class='btn btn-lg' id='play-game'>Play</p>
+
+    <div class="splash-screen">
+      <div id="splash-screen-text">
+        <h1>Code Invaders</h1>
+        <p>Use your typing skills to defeat invaders of our galaxy!</p>
+        <br>
+          <p class='btn btn-lg' id='play-game'>Play</p>
+      </div>
     </div>
-  </div>
+
   <div class="gradient">
-    <div class="container">
+        <div class="container">
       <h1>Code Invaders</h1>
       <div id="statRow" class="row">
         <div class="col-md-12">
           <h2 class='timer'>Time: <span class='roundTime'>20.00</span></h2>
           <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
-          <p id="health-bar"> <span id='one-heart'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='two-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span id='three-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> </p>
+          <p id="health-bar"> <span class='one-heart'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class='two-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class='three-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span><span class='four-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span><span class='five-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span></p>
         </div>
       </div>
       <div id="invaderRow" class="row">
@@ -50,7 +54,7 @@
       <div id="inputRow">
         <label for=""></label>
         <input id="userInput" type="text">
-        <p>Level: <span id='level-number'>1</span>: <span class="level">Space Walk</span></p>
+        <p>Level <span id='level-number'>1</span>: <span class="level">Space Walk</span></p>
       </div>
     </div>
   </div>
@@ -73,8 +77,10 @@
     <div class="col-md-12">
       <h2 class='timer'>Time: <span class='roundTime'>20.00</span></h2>
       <p>Score: <span class="score">0</span><span class='possibleScore'>/25</span></p>
+          <p id="health-bar"> <span class='one-heart'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class='two-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class='three-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span><span class='four-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span><span class='five-hearts'> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span></p>
     </div>
   </div>
+  <br>
   <a href="./index.html" class='btn btn-lg' id='reset-game'>Play again?</a>
 </div>
 </body>

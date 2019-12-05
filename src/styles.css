@@ -6,32 +6,47 @@ body {
   background-image: url("https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  color: lightgreen;
+  color: white;
   font-family: monospace;
   font-size: calc(16px + 0.5vw);
   letter-spacing: .15rem;
+  overflow: hidden;
 }
 
 h1 {
   color: orange;
   font-family: 'VT323', monospace;
   font-size: calc(96px + 0.5vw);
+  line-height: normal;
   letter-spacing: 2rem;
   text-transform: uppercase;
+  margin-bottom: 1rem;
   padding-bottom: 120px;
 }
 
+p {
+  font-size: 1.25rem;
+}
+
 #splash-screen-text h1 {
-  padding: 0px;
-  /* border: 1px solid red;
-  border-left: 0px;
-  border-right: 0px; */
-  margin-top: 500px;
+  padding-top: 520px;
+  padding-bottom: 0;
+  margin-bottom: 1.5rem;
+}
+
+#splash-screen-alien {
+  margin: 1rem auto;
+}
+
+#splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #play-game {
   padding: 10px 35px;
-  letter-spacing: 7px;
+  letter-spacing: .35rem;
   color: white;
   border: 2px solid lightgreen;
 }
@@ -45,11 +60,7 @@ h1 {
   padding-top: 120px;
 }
 
-.gradient {
-  height: 100vh;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  display: none;
-}
+
 
 #statRow {
   font-size: 30px;
@@ -274,25 +285,25 @@ h1 {
 
 #giantAlien {
   -webkit-animation-name: myAlien; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
   animation-name: myAlien;
-  animation-duration: 2s;
+  animation-duration: 4s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
-  width: 65%;
+  width: 30%;
 }
 
 @-webkit-keyframes myAlien {
-  0%   {width: 1%;}
-  75%  {width: 80%;}
-  100% {width: 65%;}
+  0%   {width: 0%;}
+  50%  {width: 40%;}
+  100% {width: 30%;}
 }
 
 /* Standard syntax */
 @keyframes myAlien {
-  0%   {width: 1%;}
-  75%  {width: 80%;}
-  100% {width: 65%;}
+  0%   {width: 0%;}
+  50%  {width: 40%;}
+  100% {width: 30%;}
 }
 
 #reset-game {
@@ -305,4 +316,10 @@ h1 {
 #reset-game:hover {
   color: white;
   border: 4px solid red;
+}
+
+.gradient {
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  display: none;
 }
