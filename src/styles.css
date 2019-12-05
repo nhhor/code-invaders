@@ -17,31 +17,36 @@ h1 {
   color: orange;
   font-family: 'VT323', monospace;
   font-size: calc(96px + 0.5vw);
+  text-transform: uppercase;
   line-height: normal;
   letter-spacing: 2rem;
-  text-transform: uppercase;
   margin-bottom: 1rem;
-  padding-bottom: 120px;
 }
 
 p {
   font-size: 1.25rem;
 }
 
+.container {
+  padding-top: 200px;
+}
+
+.gradient {
+  height: 100vh;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  display: none;
+}
+
+#gameOver, #gameWon {
+  display: block;
+  display: none;
+  margin-top: 200px;
+}
+
 #splash-screen-text h1 {
-  padding-top: 520px;
+  padding-top: 500px;
   padding-bottom: 0;
   margin-bottom: 1.5rem;
-}
-
-#splash-screen-alien {
-  margin: 1rem auto;
-}
-
-#splash-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #play-game {
@@ -52,22 +57,34 @@ p {
 }
 
 #play-game:hover {
+  font-weight: bold;
   border: 4px solid lightgreen;
   cursor: pointer;
 }
 
-.container {
-  padding-top: 120px;
+#reset-game {
+  padding: 10px 35px;
+  letter-spacing: .35rem;
+  color: white;
+  border: 2px solid purple;
+  margin: 2rem auto;
 }
 
-
-
-#statRow {
-  font-size: 30px;
+#reset-game:hover {
+  font-weight: bold;
+  border: 4px solid purple;
 }
 
-.score, .possibleScore, .roundTime {
-  color: orange;
+.stat-title {
+  color: lightgreen !important;
+}
+
+.score, .possibleScore, .roundTime, .level {
+  color: white;
+}
+
+.timer {
+  font-size: 2rem;
 }
 
 #health-bar img {
@@ -83,14 +100,6 @@ p {
   padding: 0.5rem;
 }
 
-#userInput:focus {
-  border: 2px solid purple;
-}
-
-.level {
-  color: orange;
-}
-
 .playerShip {
   position: relative;
   margin: 1rem;
@@ -101,12 +110,24 @@ p {
 }
 
 .playerCode {
-  color: white;
   padding: 1rem;
 }
 
 .invaderCode {
   color: orange;
+}
+
+.invaderCodeR{
+  display: none;
+}
+
+.laserShotL, .laserShotR {
+  color: rgba(0, 0, 0, 0);
+  font-size: 32px;
+}
+
+#winner {
+  display: none;
 }
 
 .playerShipBarrelRollRight {
@@ -256,31 +277,9 @@ p {
   100%  {color:rgba(0, 0, 0, 0);}
 }
 
-.invaderCodeR{
-  display: none;
-}
-
-.laserShotL, .laserShotR {
-  color: rgba(0, 0, 0, 0);
-  font-size: 32px;
-}
-
-#winner {
-  display: none;
-}
-
-#gameOver, #gameWon {
-  display: block;
-  display: none;
-  margin-top: 180px;
-}
-
 #jupiter {
-  width: 40%;
-}
-
-#gameOverHeader, #gameWonHeader {
-  padding: 0;
+  width: 20%;
+  margin: 2rem auto;
 }
 
 #giantAlien {
@@ -291,6 +290,7 @@ p {
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
   width: 30%;
+  margin: 2rem auto;
 }
 
 @-webkit-keyframes myAlien {
@@ -304,22 +304,4 @@ p {
   0%   {width: 0%;}
   50%  {width: 40%;}
   100% {width: 30%;}
-}
-
-#reset-game {
-  color: white;
-  border: 2px solid red;
-  padding: 10px 35px;
-  letter-spacing: 7px;
-}
-
-#reset-game:hover {
-  color: white;
-  border: 4px solid red;
-}
-
-.gradient {
-  height: 100vh;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.6) 20%,rgba(0, 0, 0, 0.6) 80%,rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  display: none;
 }
