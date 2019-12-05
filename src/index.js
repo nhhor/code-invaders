@@ -71,18 +71,21 @@ $(document).ready(function() {
         let newTime = player.time -= .1;
         let roundTime = parseFloat(player.time).toFixed(2);
         $('.roundTime').text(roundTime);
-        // return roundTime;
         if(player.health < 1){
           clearInterval(timer);
+          $('.roundTime').text(roundTime);
+          $('.totalScore').text(player.score + parseInt(roundTime) + (player.health * 25));
         } else if (roundTime <=0.09) {
           clearInterval(timer);
-          $('.roundTime').text(roundTime);
           player.health = 0;
+          $('.roundTime').text(Math.abs(roundTime));
+          $('.totalScore').text(player.score + parseInt(roundTime) + (player.health * 25));
           gameOver();
           console.log(roundTime);
         } else if (player.score > 24) {
           clearInterval(timer);
-          $('.roundTime').text(roundTime);
+          $('.roundTime').text(Math.abs(roundTime));
+          $('.totalScore').text(player.score + parseInt(roundTime) + (player.health * 25));
         }
       }, 100);
     }, 3000);
@@ -222,7 +225,6 @@ $(document).ready(function() {
       }
     }
     checkLevel();
-
     gameOver();
   });
 });
