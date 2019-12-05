@@ -13,7 +13,15 @@ const alienDeathRay = new Audio();
 alienDeathRay.src = aliendeathray;
 
 $(document).ready(function() {
+  $('.splash-screen').hide();
+  $('.splash-screen').fadeIn(1500);
+  $('#play-game').click(function(){
+    $('#splash-screen-text').fadeOut(1500);
+    setTimeout(function(){
+      $('.gradient').fadeIn(1500);
+    },1500)
 
+  })
   let player = new Player();
   player.turnCounter = 0;
   let code = player.generateCode();
@@ -111,13 +119,17 @@ $(document).ready(function() {
     function checkLevel() {
       if (player.score === 5) {
         $(".level").text("May the Schwartz be with you.");
+        $('#level-number').text('2');
       } else if (player.score === 10) {
         console.log('Difficulty 3');
         $(".level").text("You still don't understand what you're dealing with...");
+        $('#level-number').text('3');
       } else if (player.score === 15) {
         $(".level").text("No weapons! No tricks! Just you and me!");
+        $('#level-number').text('4');
       } else if (player.score === 20) {
         $(".level").text("Kill....me! Ripley");
+        $('#level-number').text('5');
       } else if (player.score === 25){
         $('.gradient').hide();
         $('#gameWon').fadeIn();
