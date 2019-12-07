@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Code Invaders</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="splash-screen">
+      <div id="splash-screen-text">
+        <h1>Code Invaders</h1>
+        <p>Use your typing skills to defeat invaders of our galaxy!</p>
+        <br>
+          <p class="btn btn-lg" id="play-game">Play</p>
+      </div>
+    </div>
+
+  <div class="gradient">
+        <div class="container">
+      <h1>Code Invaders</h1>
+      <div id="statRow" class="row">
+        <div class="col-md-12">
+          <p class="timer stat-title">Time: <span class="roundTime">20.00</span></p>
+          <p class="stat-title">Score: <span class="score">0</span><span class="possibleScore">/25</span></p>
+          <p id="health-bar"> <span class="one-heart"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class="two-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class="three-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span><span class="four-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span><span class="five-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span></p>
+        </div>
+      </div>
+      <div id="invaderRow" class="row">
+        <div class="col-md-6">
+          <img class="invaderCodeL" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif" alt="alien gif" width=20%>
+          <p class="invaderCode invaderCodeL"></p>
+        </div>
+        <div class="col-md-6">
+          <img class="invaderCodeR" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/invader.gif" alt="alien gif" width=20%>
+          <p class="invaderCode invaderCodeR"></p>
+        </div>
+      </div>
+      <div id="laserRow" class="row">
+        <div class="col-md-6">
+          <p class="laserShotL">|</p>
+        </div>
+        <div class="col-md-6">
+          <p class="laserShotR">|</p>
+        </div>
+      </div>
+      <div id="playerRow" class="row">
+        <div class="col-md-12">
+          <img class="playerShip playerShipMovement" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/spaceship.png" width="160px"/>
+          <p id="displayCode"><span class="playerCode"></span></p>
+        </div>
+      </div>
+      <div id="inputRow">
+        <label for=""></label>
+        <input id="userInput" type="text">
+        <p class="stat-title">Level <span id="level-number">1</span>: <span class="level">Space Walk</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="gameOver">
+  <img id="giantAlien" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/alien.png"/>
+  <h1 id="gameOverHeader">Game Over</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="timer stat-title">Time: <span class="roundTime">20.00</span></p>
+      <p class="stat-title">Score: <span class="score">0</span><span class="possibleScore">/25</span></p>
+      <p class="stat-title">Total Score: <span class='totalScore'></span> </p>
+    </div>
+  </div>
+  <a href="./index.html" class="btn btn-lg" id="reset-game">Try again?</a>
+</div>
+<div id="gameWon">
+  <img id="jupiter" src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/jupiter.gif"/>
+  <h1 id="gameWonHeader">You Won!</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <p class="timer stat-title">Time: <span class="roundTime">20.00</span></p>
+      <p class="stat-title">Score: <span class="score">0</span><span class="possibleScore">/25</span></p>
+      <p id="health-bar"> <span class="one-heart"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class="two-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span> <span class="three-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""> </span><span class="four-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span><span class="five-hearts"> <img src="https://raw.githubusercontent.com/nhhor/code-invaders/master/images/heart.png" alt=""></span></p>
+      <p class="stat-title">Total Score: <span class="totalScore"></span></p>
+    </div>
+  </div>
+  <a href="./index.html" class="btn btn-lg" id="reset-game">Play again?</a>
+</div>
+<script type="text/javascript" src="bundle.js"></script></body>
+</html>

@@ -7,7 +7,7 @@
 ## Description:
 This project was made as part of a team project for students at [Epicodus](http://www.epicodus.com), a vocational school for technology careers, based in Portland, OR. The project is designed to help users practice typing code through an interactive space-themed game.
 
-The fully deployed project is hosted on GitHub Pages [here](https://nhhor.github.io/code-invaders).
+The fully deployed project is hosted on GitHub Pages [here](https://nhhor.github.io/code-invaders/index.html).
 
 ## Setup/Installation instructions:
 * Click the `Clone or download` button and copy the link.
